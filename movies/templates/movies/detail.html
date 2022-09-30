@@ -3,7 +3,7 @@
 {% block content %}
 <div class="m-4">
   <h1>제목: {{detail.title}}</h1>
-  <p>{{detail.content}}</p>
+  <div style="white-space: pre;">{{detail.content}}</div>
 </div>
 <div class="m-4">
   <a href="../edit/{{detail.id}}" class="btn btn-primary">수정</a>
