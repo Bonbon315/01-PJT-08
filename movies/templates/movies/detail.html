@@ -1,0 +1,12 @@
+{% extends 'movies/base.html' %}
+
+{% block content %}
+<div class="m-4">
+  <h1>제목: {{detail.title}}</h1>
+  <p>{{detail.content}}</p>
+</div>
+<div class="m-4">
+  <a href="../edit/{{detail.id}}" class="btn btn-primary">수정</a>
+  <a href="../delete/{{detail.id}}" class="btn btn-danger">삭제</a>
+</div>
+{% endblock  %}

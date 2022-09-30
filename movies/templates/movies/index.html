@@ -1,0 +1,27 @@
+{% extends 'movies/base.html' %}
+
+{% block content %}
+<div class="m-3">
+  <a href="../new/" class="btn btn-primary">리뷰 작성</a>
+</div>
+<div class="m-3">
+  <table class="table">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">리뷰 번호</th>
+        <th scope="col">리뷰 제목</th>
+        <th scope="col">작성 시간</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for movie in movies %}
+      <tr>
+        <td>{{ movie.id }}</td>
+        <td><a href="../detail/{{movie.id}}" class="text-decoration-none fw-bold">{{ movie.title }}</a></td>
+        <td>{{ movie.created_at|date:"Y-m-d H:i" }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock  %}
