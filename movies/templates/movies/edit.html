@@ -1,7 +1,13 @@
 {% extends 'movies/base.html' %}
+{% load django_bootstrap5 %}
 
 {% block content %}
-<form class="m-4" action="{% url 'update' edit.id %}">
+<form class="m-4" action="" method="POST">
+  {% csrf_token %}
+  {% bootstrap_form movies_form %}
+  {% bootstrap_button button_type="submit" content="OK" %}
+</form>
+{% comment %} <form class="m-4" action="{% url 'update' edit.id %}">
   <div class="mb-3">
     <label for="title" class="form-label">제목</label>
     <input type="text" class="form-control" id="title" name="title" maxlength="80" value="{{edit.title}}">
@@ -13,5 +19,5 @@
   <div class="d-grid gap-2">
     <button class="btn btn-primary" type="submit">리뷰 수정</button>
   </div>
-</form>
+</form> {% endcomment %}
 {% endblock  %}

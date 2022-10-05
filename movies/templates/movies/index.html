@@ -1,8 +1,12 @@
 {% extends 'movies/base.html' %}
 
 {% block content %}
+{% load static %}
+<!-- Django Staticfiles 활용한 정적 파일 -->
+<!-- 웹페이지에선 src="/static/sample.webp" 로 표기된다. -->
+<img src="{% static 'sample.webp' %}" alt="" class="m-3">
 <div class="m-3">
-  <a href="../new/" class="btn btn-primary">리뷰 작성</a>
+  <a href="../create/" class="btn btn-primary">리뷰 작성</a>
 </div>
 <div class="m-3">
   <table class="table">
@@ -17,7 +21,7 @@
       {% for movie in movies %}
       <tr>
         <td>{{ movie.id }}</td>
-        <td><a href="../detail/{{movie.id}}" class="text-decoration-none fw-bold">{{ movie.title }}</a></td>
+        <td><a href="../{{movie.id}}" class="text-decoration-none fw-bold">{{ movie.title }}</a></td>
         <td>{{ movie.created_at|date:"Y-m-d H:i" }}</td>
       </tr>
       {% endfor %}

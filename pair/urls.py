@@ -22,9 +22,9 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("index/", views.index, name="index"),
     path("create/", views.create, name="create"),
-    path("new/", views.new, name="new"),
-    path("edit/<int:pk>", views.edit, name="edit"),
+    # path("new/", views.new, name="new"),
+    # path("edit/<int:pk>", views.edit, name="edit"),
     path("update/<int:pk>", views.update, name="update"),
-    path("detail/<int:pk>", views.detail, name="detail"),
+    path("<int:pk>/", views.detail, name="detail"),
     path("delete/<int:pk>", views.delete, name="delete"),
 ]
