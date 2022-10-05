@@ -2,6 +2,7 @@
 {% load django_bootstrap5 %}
 
 {% block content %}
+<!-- bootstrap 과 POST를 이용한 간단한 수정 페이지 구축 -->
 <form class="m-4" action="" method="POST">
   {% csrf_token %}
   {% bootstrap_form movies_form %}
